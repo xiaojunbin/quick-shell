@@ -1,0 +1,1 @@
+for %%i in (3306, 6379, 5672, 15672, 9200, 5601, 5602, 8848) do netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=%%i connectaddress=%1 connectport=%%i
