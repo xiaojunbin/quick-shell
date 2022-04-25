@@ -4,7 +4,7 @@ PRJ_PATH='/root/bandex/code/bandex_exchange'
 REMOTE_REGISTRY='registry.cn-shenzhen.aliyuncs.com'
 
 # 登录docker
-docker login --username=绿蚁网络 -p lvyii@go $REMOTE_REGISTRY
+docker login --username=${username} -p ${password} $REMOTE_REGISTRY
 if [ $? -ne 0 ]; then
     echo "登录docker失败，请检查网络"
     exit

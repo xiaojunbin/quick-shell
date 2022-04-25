@@ -10,7 +10,7 @@ VERSION=2.2.0
 cd $WORKSPACE/
 
 # 登录docker
-docker login --username=绿蚁网络 -p lvyii@go $REMOTE_REGISTRY
+docker login --username=${username} -p ${password} $REMOTE_REGISTRY
 
 echo '开始本地打包'
 # mvn打包生成jar包
