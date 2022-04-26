@@ -10,6 +10,6 @@ mvn clean package -Pcdev -DskipTests;
 mvn docker:build;
 
 REMOTE_REP="$REMOTE_REGISTRY/bandex_cdev"
-docker login --username=绿蚁网络 -p lvyii@go $REMOTE_REGISTRY;
+docker login --username=${username} -p ${password} $REMOTE_REGISTRY;
 docker tag ybt-server/com.ybt:0.0.1-SNAPSHOT $REMOTE_REP/ybt-server/com.ybt:0.0.1-SNAPSHOT
 docker push $REMOTE_REP/ybt-server/com.ybt:0.0.1-SNAPSHOT
