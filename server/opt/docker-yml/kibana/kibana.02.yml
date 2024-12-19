@@ -1,1 +1,0 @@
-version: '3.2'services:  kibana:    container_name: kibana-test    image: kibana:7.6.0    restart: always    privileged: true    volumes:      - /conf/kibana.test.yml:/usr/share/kibana/config/kibana.yml    ports:      - "5062:5602"
