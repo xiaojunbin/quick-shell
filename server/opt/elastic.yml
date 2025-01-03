@@ -1,0 +1,27 @@
+services:
+  kibana:
+    container_name: kibana
+    image: kibana:7.17.26
+    restart: always
+    privileged: true
+    volumes:
+      - /opt/conf/kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elastic
+  elastic:
+    container_name: elastic
+    image: elasticsearch:7.17.26
+    restart: always
+    privileged: true
+    environment:
+      ES_JAVA_OPTS: -Xms1024m -Xmx2048m
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /opt/conf/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - "9200:9200"
